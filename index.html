@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Siva Mani | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #555;
+        }
+        .logo h1 {
+            margin: 0;
+            font-family: 'Lobster', cursive;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo h1 img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        .logo h1 img:hover {
+            transform: rotate(360deg);
+        }
+        .nav-links {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .nav-links li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffc107;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .info-block {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .info-block i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #007bff;
+        }
+        .info-block p {
+            margin: 0;
+            color: #555;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .contact-info p {
+            margin-right: 20px;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .typing-animation {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: orange;
+            }
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 1.5s ease forwards;
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .loading-overlay img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-overlay">
+        <img src="profile.jpg" alt="Loading...">
+    </div>
+
+    <header>
+        <div class="logo">
+            <h1><img src="profile.jpg"> <span class="typing-animation">Sai Siva Mani</span></h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <div class="info-block">
+                <i class="fas fa-graduation-cap"></i>
+                <p>Currently pursuing B.Tech in Computer Science and Design at SRKR Engineering College.</p>
+            </div>
+            <div class="info-block">
+                <i class="fas fa-award"></i>
+                <p>Secondary Education: ZPHS Siragalapalli (CGPA: 9.2)</p>
+            </div>
+            <div class="info-block">
+                <i class="fas fa-award"></i>
+                <p>Intermediate Education: Sri Chaitanya JR College (Percentage: 79.5)</p>
+            </div>
+            <div class="info-block">
+                <i class="fas fa-code"></i>
+                <p>Technical Skills: HTML, CSS, JavaScript, PHP, MySQL, Figma</p>
+            </div>
+            <div class="info-block">
+                <i class="fas fa-users"></i>
+                <p>Skills: Team Leading, Critical Thinking</p>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2><i class="fas fa-cogs"></i> Skills</h2>
+            <div class="skill-block">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, PHP</p>
+            </div>
+            <div class="skill-block">
+                <h3>Database Management</h3>
+                <p>MySQL, MongoDB</p>
+            </div>
+            <div class="skill-block">
+                <h3>Design Tools</h3>
+                <p>Figma, Adobe Photoshop, Adobe Illustrator</p>
+            </div>
+            <div class="skill-block">
+                <h3>Team Management</h3>
+                <p>Leadership, Communication, Problem-solving</p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+            <div class="project">
+                <h3>Youth Cultural Association</h3>
+                <p>A web application developed for managing over 1100 members of the Youth Cultural Association.</p>
+                <a href="https://ycabvrm.com/" target="_blank">Visit Website</a>
+            </div>
+            <div class="project">
+                <h3>SRKREC Official Website</h3>
+                <p>As the team lead and coordinator, I revamped and maintained our college's official website.</p>
+                <a href="https://srkrec.edu.in/" target="_blank">Visit Website</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="button" onclick="sendEmail()">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sai Siva Mani</p>
+    </footer>
+
+    <script>
+        function sendEmail() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var mailtoLink = 'mailto:sivavanapalli59@gmail.com?subject=Portfolio%20Contact&body=Name: ' + name + '%0D%0AEmail: ' + email + '%0D%0AMessage: ' + message;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
